@@ -8,7 +8,6 @@ export default function Pokemon(){
   
   const [busca, setBusca] = useState('');
   const [lista, setLista] = useState<any[]>([]);
-  const [gen, setGen] = useState(1);
 
   function testaBusca(titulo: string) {
     const regex = new RegExp(busca, 'i');
@@ -24,6 +23,7 @@ export default function Pokemon(){
       const novaLista = lista.filter((item) => testaBusca(item.data.name));
       setLista(novaLista);
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [busca]);
 
   
@@ -35,15 +35,11 @@ export default function Pokemon(){
     axios.all(endpoints.map(endpoint => axios.get(endpoint))).then((res) => setLista(res));
   };
 
-  const mudaGen = (event:any) => {
-      setGen(event.target.value);
-  }
-  
 
   return (
     <>
     <div className='d-flex justify-content-between mb-3'>
-    <select disabled className="form-select selectGen" aria-label="Default select example" onChange={mudaGen}>
+    <select disabled className="form-select selectGen" aria-label="Default select example">
       <option selected value='1'>1ª Geração</option>
       <option value="2">2ª Geração</option>
       <option value="3">3ª Geração</option>
