@@ -1,0 +1,29 @@
+.imagem{
+	width: 90px;
+}
+
+.nav{
+	padding-top: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+.px{
+	padding-left: 85px;
+	padding-right: 90px;
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.background{
+	background-image: url('../../assets/img/pokemon_wallpaper01_1680.jpg');
+	background-size: auto;
+	min-height: 100vh;
+}
+
+.footer{
+	height: 90px;
+	background-color: black;
+	color: white;
+	text-align: center;
+	padding-top: 32px;
+}

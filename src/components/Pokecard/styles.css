@@ -1,0 +1,119 @@
+.pokemon{
+	min-width: 250px;
+	max-width: 250px;
+	border: 2px solid rgb(195, 195, 195);
+	background-color: rgb(255, 253, 253);
+}
+
+.pokemon:hover{
+	transform: translate(6px, 6px);
+	transition: ease-in-out;
+}
+
+.img{
+	background-image: url(../../assets/img/pokeball-png-45330.png);
+	background-size: cover;
+	margin-bottom: 20px;
+	margin-left: 60px;
+}
+
+
+.nameContainer{
+	text-align: center;
+	width: 100%;
+	color: rgb(41, 41, 41);
+}
+.name{
+	text-transform: capitalize;
+	font-size: 30px;
+}
+ 
+.typeContainer{
+	margin-left: 15px;
+}
+
+.typeContainer2{
+	margin-left: 60px;
+}
+
+.type{
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+	font-size: 15px;
+	padding: 5px;
+	min-width: 80px;
+	min-height: 30px;
+	margin-left: 5px;
+	text-transform: capitalize;
+}
+
+
+
+.grass{
+	background-color: rgb(12, 177, 12);
+}
+
+.poison{
+	background-color: rgb(239, 3, 239);
+}
+
+.fire{
+	background-color: rgb(218, 17, 17);
+}
+
+.flying{
+	background-color: rgb(17, 219, 242);
+}
+
+.water{
+	background-color: rgb(12, 90, 245);
+}
+
+.bug{
+	background-color: rgb(6, 224, 6);
+}
+
+.normal{
+	background-color: gray;
+}
+
+.electric{
+	background-color: rgb(200, 200, 2);
+}
+
+.psychic{
+	background-color: rgb(222, 44, 107);
+}
+
+.fighting{
+	background-color: rgb(181, 0, 0);
+}
+
+.rock{
+	background-color: rgb(214, 77, 27)	;
+}
+
+.ghost{
+	background-color: blue;
+}
+
+.ground{
+	background-color: rgb(234, 179, 79);
+}
+
+.ice{
+	background-color: rgb(124, 210, 210);
+}
+
+.steel{
+	background-color: rgb(95, 95, 95);
+}
+
+.dragon{
+	background-color: rgb(121, 22, 121);
+}
+
+.fairy{
+	background-color: pink;
+}
