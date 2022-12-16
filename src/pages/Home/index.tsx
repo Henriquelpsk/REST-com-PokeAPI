@@ -1,8 +1,8 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import Pokecard from "../../components/Pokecard";
-import Buscador from "./Buscador";
-import './styles.css'
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import Pokecard from '../../components/Pokecard';
+import Buscador from './Buscador';
+import './styles.css';
 
 export default function Pokemon(){
   
@@ -23,14 +23,13 @@ export default function Pokemon(){
       const novaLista = lista.filter((item) => testaBusca(item.data.name));
       setLista(novaLista);
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [busca]);
 
   
   const getPokemons = () => {
-    let endpoints = [];
+    const endpoints = [];
     for (let i = 1; i < 152; i++) {
-      endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`)
+      endpoints.push(`https://pokeapi.co/api/v2/pokemon/${i}/`);
     }
     axios.all(endpoints.map(endpoint => axios.get(endpoint))).then((res) => setLista(res));
   };
@@ -38,26 +37,26 @@ export default function Pokemon(){
 
   return (
     <>
-    <div className='d-flex justify-content-between mb-3'>
-    <select disabled className="form-select selectGen" aria-label="Default select example">
-      <option selected value='1'>1ª Geração</option>
-      <option value="2">2ª Geração</option>
-      <option value="3">3ª Geração</option>
-      <option value="4">4ª Geração</option>
-      <option value="5">5ª Geração</option>
-      <option value="6">6ª Geração</option>
-      <option value="7">7ª Geração</option>
-      <option value="8">8ª Geração</option>
-    </select>
+      <div className='d-flex justify-content-between mb-3'>
+        <select disabled className="form-select selectGen" defaultValue='1' aria-label="Default select example">
+          <option value='1'>1ª Geração</option>
+          <option value="2">2ª Geração</option>
+          <option value="3">3ª Geração</option>
+          <option value="4">4ª Geração</option>
+          <option value="5">5ª Geração</option>
+          <option value="6">6ª Geração</option>
+          <option value="7">7ª Geração</option>
+          <option value="8">8ª Geração</option>
+        </select>
         <Buscador busca={busca} setBusca={setBusca} />
-			</div>
+      </div>
 
-    <div className="row d-flex gap-3 justify-content-md-center">
-      {lista.map((item, key) =>
-            <Pokecard item={item} key={key}/>
-      )}
+      <div className="row d-flex gap-3 justify-content-md-center">
+        {lista.map((item) =>
+          <Pokecard item={item} key={item.data.id}/>
+        )}
 
-    </div>
+      </div>
     </>
   );
 }
